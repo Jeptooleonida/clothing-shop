@@ -1,3 +1,16 @@
- p h1 {
-    color: white;
+.page-desc{
+    align-items: center;
+    
+    h1 {
+        color: white !important;
+        font-size: 40px !important;
+        text-align: center;
+        font-weight: bold;
+    }
+    p {
+        color: white !important;
+        font-size: 20px !important;
+        text-align: center;
+    }
+
 }
