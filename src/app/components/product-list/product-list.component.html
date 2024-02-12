@@ -1,0 +1,22 @@
+<section class="product-sec">
+    <div class="row">
+      <div class="col-md-3" *ngFor="let product of products ">
+        <a [routerLink]="['/product', product.id]">
+            <div class="card">
+                      <img [src]="product.image" class="card-img-top" alt="Product Image">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <p class="card-text">Price: {{ product.price }}</p>
+          </div>
+          <div class="card-details" >
+            <h5 class="card-title">{{ product.title }}</h5>
+            <h5 class="card-title">{{ product.category }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <button class="btn btn-primary">Add to Cart</button>
+          </div>
+        </div>
+        </a>
+      </div>
+    
+    </div>
+  </section>

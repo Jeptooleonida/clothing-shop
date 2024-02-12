@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ProductService } from '../../services/product.service';
+import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-product-details',
@@ -10,13 +12,14 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
   styleUrl: './product-details.component.css'
 })
 export class ProductDetailsComponent implements OnInit {
-  productId: string = '';
- data: any[]= [];
+  products: Product[] = [];
 
-  constructor(private route: ActivatedRoute){}
+  constructor( private productService: ProductService){}
 
   ngOnInit(): void {
-    this.productId = this.route.snapshot.paramMap.get('id') || '';
+    this.productService.getProducts().subscribe(products =>{
+      this.products = products;
+    });
   }
 
 }

@@ -1,33 +1,13 @@
-import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component } from '@angular/core';
+import { ProductListComponent } from "../../components/product-list/product-list.component";
 
 @Component({
-  selector: 'app-homepage',
-  standalone: true,
-  imports: [HttpClientModule, CommonModule],
-  templateUrl: './homepage.component.html',
-  styleUrl: './homepage.component.css'
+    selector: 'app-homepage',
+    standalone: true,
+    templateUrl: './homepage.component.html',
+    styleUrl: './homepage.component.css',
+    imports: [ProductListComponent]
 })
-export class HomepageComponent implements OnInit{
+export class HomepageComponent {
  
-  httpClient = inject (HttpClient);
-  data:any[] = [];
-
-  ngOnInit(): void {
-    this.getProducts();
-  }
-
-  getProducts() {
-    this.httpClient
-    .get('https://fakestoreapi.com/products')
-    
-    .subscribe((data: any) =>  {
-      console.log(data);
-      this.data = data})
-  }
-
-  getProductDetails(product:any): void {
-    product.showDetails = !product.showDetails;
-  }
 }
