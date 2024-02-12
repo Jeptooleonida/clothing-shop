@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit, inject } from '@angular/core';
-import { log } from 'console';
 
 @Component({
   selector: 'app-homepage',
@@ -26,5 +25,9 @@ export class HomepageComponent implements OnInit{
     .subscribe((data: any) =>  {
       console.log(data);
       this.data = data})
+  }
+
+  getProductDetails(product:any): void {
+    product.showDetails = !product.showDetails;
   }
 }

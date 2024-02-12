@@ -5,6 +5,7 @@ import { CategoriesComponent } from './pages/categories/categories.component';
 import { CollectionsComponent } from './pages/collections/collections.component';
 import { FindStoreComponent } from './pages/find-store/find-store.component';
 import { StoreComponent } from './pages/store/store.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 export const routes: Routes = [
     
@@ -14,6 +15,6 @@ export const routes: Routes = [
        { path:'collections', component:CollectionsComponent},
        { path:'find-store', component:FindStoreComponent},
        { path: 'store', component:StoreComponent},
-         
+       { path: 'product/:id', component:ProductDetailsComponent } 
     
 ];
